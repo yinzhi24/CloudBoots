@@ -29,7 +29,7 @@ public class CloudBootsItem extends ArmorItem
 	{
 		super(CloudArmorMaterial.cloud, EquipmentSlotType.FEET, builder);
 		
-		this.movementSpeed = new AttributeModifier("CloudBootsMovementSpeedModifier", 0.15F, Operation.MULTIPLY_TOTAL);
+		this.movementSpeed = new AttributeModifier("CloudBootsMovementSpeedModifier", 0.2F, Operation.MULTIPLY_TOTAL);
 	}
 	
 	@Override
@@ -53,11 +53,11 @@ public class CloudBootsItem extends ArmorItem
 			
 			if(player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == this)
 			{
-				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 0, 4, false, false));
+				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 5, 7, false, false));
 				
 				if(!player.onGround)
 				{
-					player.jumpMovementFactor += 0.03F;
+					player.jumpMovementFactor += 0.05F;
 					
 					if(player.fallDistance >= 1.0F)
 					{
